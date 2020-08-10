@@ -8,4 +8,18 @@
         select *
       from `goods`
     </select>
+    <select id="selectGoodsByMultipleParameter" resultType="Goods" parameterType="Goods">
+        select *
+        from `goods`
+        where good_num is not null
+        <if test="detailClassifyname != null">
+            and detail_classifyname like CONCAT('%', #{detailClassifyname}, '%')
+        </if>
+        <if test="summaryClassifyname != null ">
+             and summary_classifyname like CONCAT('%', #{summaryClassifyname}, '%')
+        </if>
+        <if test="description != null">
+            and description like CONCAT('%', #{description}, '%')
+        </if>
+    </select>
 </mapper>

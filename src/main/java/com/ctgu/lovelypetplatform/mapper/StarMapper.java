@@ -8,4 +8,5 @@ import java.util.List;
 @Mapper
 public interface StarMapper {
     List<Star> selectStarByUserTelenum(String telenum);
+    void insertStar(Star star);
 }

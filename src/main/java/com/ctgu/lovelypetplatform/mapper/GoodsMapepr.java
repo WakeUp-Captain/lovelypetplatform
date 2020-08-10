@@ -8,4 +8,5 @@ import java.util.List;
 @Mapper
 public interface GoodsMapepr {
     List<Goods> selectAllGoods();
+    List<Goods> selectGoodsByMultipleParameter(Goods goods);
 }

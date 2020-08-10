@@ -7,6 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface BrowseRecordMapper {
+
     List<BrowseRecord> selectBrowseRecordByUserTelenum(String telenum);
     void insertBrowseRecord(BrowseRecord browseRecord);
 }

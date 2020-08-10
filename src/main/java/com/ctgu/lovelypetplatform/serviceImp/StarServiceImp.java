@@ -19,4 +19,10 @@ public class StarServiceImp implements StarService {
     public List<Star> selectStarByUserTelenum(String telenum) {
         return starMapper.selectStarByUserTelenum(telenum);
     }
+
+    @Override
+    public Star insertStar(Star star) {
+        starMapper.insertStar(star);
+        return star;
+    }
 }

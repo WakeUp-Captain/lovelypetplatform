@@ -9,4 +9,8 @@
         from `star`
         where telenum = #{telenum}
     </select>
+
+    <insert id="insertStar" keyProperty="id" useGeneratedKeys="true" parameterType="Star">
+        insert  into star(good_num,telenum) values (#{goodNum},#{telenum})
+    </insert>
 </mapper>
