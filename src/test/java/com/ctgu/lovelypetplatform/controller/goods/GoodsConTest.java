@@ -18,6 +18,6 @@ class GoodsConTest {
 
     @Test
     void selectAllGoods() {
-        System.out.println(goodsService.selectAllGoods().size());
+        System.out.println(goodsService.selectAllGoods());
     }
 }

@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface GoodsService {
     List<Goods> selectAllGoods();
+    List<Goods> selectGoodsByMultipleParameter(Goods goods);
 }

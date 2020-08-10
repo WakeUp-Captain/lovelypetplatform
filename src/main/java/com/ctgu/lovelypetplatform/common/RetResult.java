@@ -1,4 +1,4 @@
-package com.ctgu.lovelypetplatform.config;
+package com.ctgu.lovelypetplatform.common;
 
 
 import lombok.AllArgsConstructor;

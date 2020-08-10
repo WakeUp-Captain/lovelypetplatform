@@ -18,4 +18,15 @@ public class UserServiceImp implements UserService {
     public List<User> selectAllUser() {
         return userMapper.selectAllUser();
     }
+
+    @Override
+    public User insertUser(User user) {
+        userMapper.insertUser(user);
+        return user;
+    }
+
+    @Override
+    public List<User> selectUserByTelenum(User user) {
+        return userMapper.selectUserByTelenum(user);
+    }
 }

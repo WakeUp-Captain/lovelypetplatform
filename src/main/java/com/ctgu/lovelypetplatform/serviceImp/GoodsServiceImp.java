@@ -17,4 +17,9 @@ public class GoodsServiceImp implements GoodsService {
     public List<Goods> selectAllGoods(){
         return goodsMapepr.selectAllGoods();
     }
+
+    @Override
+    public List<Goods> selectGoodsByMultipleParameter(Goods goods) {
+        return goodsMapepr.selectGoodsByMultipleParameter(goods);
+    }
 }
