@@ -30,6 +30,8 @@ public class UserCon {
         User user = new User();
         user.setTelenum(reqMap.get("telenum").toString());
         user.setPassword(reqMap.get("password").toString());
-        return "注册成功";
+        return "登录成功";
     }
+
+
 }

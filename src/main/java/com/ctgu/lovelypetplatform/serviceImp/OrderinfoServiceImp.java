@@ -8,6 +8,7 @@ import com.sun.tools.corba.se.idl.constExpr.Or;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class OrderinfoServiceImp implements OrderinfoService {
@@ -24,5 +25,10 @@ public class OrderinfoServiceImp implements OrderinfoService {
     public Orderinfo updateOrderinfo(Orderinfo orderinfo) {
         orderinfoMapper.updateOrderinfo(orderinfo);
         return orderinfo;
+    }
+
+    @Override
+    public List<Orderinfo> selectOrderinfo(Orderinfo orderinfo) {
+        return orderinfoMapper.selectOrderinfo(orderinfo);
     }
 }

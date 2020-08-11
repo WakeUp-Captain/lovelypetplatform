@@ -21,6 +21,8 @@ public class BrowseRecordServiceImp implements BrowseRecordService {
 
     @Override
     public BrowseRecord insertBrowseRecord(BrowseRecord browseRecord) {
+
+//        插入浏览记录之前要求数据库中没有相同的元组
         if (browseRecordMapper.selectGoodsFromBrowseRecordByTelenumAndGoodsNum(browseRecord).size() == 0) {
             System.out.println("没有记录，可以再次插入数据");
             browseRecordMapper.insertBrowseRecord(browseRecord);
