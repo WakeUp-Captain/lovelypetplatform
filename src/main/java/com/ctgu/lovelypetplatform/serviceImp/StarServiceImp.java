@@ -17,8 +17,8 @@ public class StarServiceImp implements StarService {
     StarMapper starMapper;
 
     @Override
-    public List<Star> selectStarByUserTelenum(String telenum) {
-        return starMapper.selectStarByUserTelenum(telenum);
+    public List<Star> selectStarByMultipleParameter(Star star) {
+        return starMapper.selectStarByMultipleParameter(star);
     }
 
     @Override

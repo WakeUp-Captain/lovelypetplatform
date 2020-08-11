@@ -8,7 +8,7 @@ import java.util.List;
 
 @Mapper
 public interface StarMapper {
-    List<Star> selectStarByUserTelenum(String telenum);
+    List<Star> selectStarByMultipleParameter(Star star);
     void insertStar(Star star);
     List<Goods> selectGoodsFromStarByTelenumAndGoodsNum(String telenum);
 }

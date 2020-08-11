@@ -6,7 +6,7 @@ import com.ctgu.lovelypetplatform.entity.Star;
 import java.util.List;
 
 public interface StarService {
-    List<Star> selectStarByUserTelenum(String telenum);
+    List<Star> selectStarByMultipleParameter(Star star);
     Star insertStar(Star star);
     List<Goods> selectGoodsFromStarByTelenumAndGoodsNum(String telenum);
 }

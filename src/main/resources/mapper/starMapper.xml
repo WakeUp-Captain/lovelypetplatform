@@ -4,10 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.ctgu.lovelypetplatform.mapper.StarMapper">
-    <select id="selectStarByUserTelenum" parameterType="string" resultType="Star">
+    <select id="selectStarByMultipleParameter" parameterType="Star" resultType="Star">
         select *
-        from `star`
-        where telenum = #{telenum}
+        from `star` where starid is not null
+        <if test="goodNum!=null">
+            and good_num = #{goodNum}
+        </if>
+        <if test="telenum!=null">
+            and telenum = #{telenum}
+        </if>
     </select>
 
     <insert id="insertStar" keyProperty="id" useGeneratedKeys="true" parameterType="Star">

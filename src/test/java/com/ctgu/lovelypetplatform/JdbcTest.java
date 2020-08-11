@@ -1,15 +1,19 @@
 package com.ctgu.lovelypetplatform;
 
 
+import com.ctgu.lovelypetplatform.common.OrderinfoDetail;
+import com.ctgu.lovelypetplatform.common.ShowOrderinfoDetail;
 import com.ctgu.lovelypetplatform.entity.*;
 import com.ctgu.lovelypetplatform.service.*;
 import org.junit.Test;
+import org.junit.jupiter.api.Order;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import sun.nio.cs.US_ASCII;
 
+import java.lang.reflect.Array;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -40,12 +44,6 @@ public class JdbcTest {
         System.out.println(browseRecordService.selectBrowseRecordByUserTelenum("admin"));
     }
 
-    //    根据telenum查询收藏记录
-    @Test
-    public void selectStarByUserTelenum() {
-        System.out.println(starService.selectStarByUserTelenum("admin"));
-    }
-
 
     //    插入浏览记录
     @Test
@@ -59,7 +57,7 @@ public class JdbcTest {
     //    插入收藏记录
     @Test
     public void insertStar() {
-        Star star = new Star(null, 1111, "admin");
+        Star star = new Star(null, 1, "admin");
         System.out.println(starService.insertStar(star));
     }
 
@@ -170,6 +168,24 @@ public class JdbcTest {
         orderinfo.setState(1);
         orderinfo.setOrderid(1);
         System.out.println(orderinfoService.updateOrderinfo(orderinfo));
+    }
+    @Test
+//    多条件的查询收藏
+    public void selectStarByMultipleParameter(){
+        for (Star star:starService.selectStarByMultipleParameter(new Star(null,1,"admin")))
+        {
+            System.out.println(star);
+        }
+    }
+
+    @Test
+//    订单详情的展示
+    public void selectOrderinfo(){
+        ShowOrderinfoDetail showOrderinfoDetail = new ShowOrderinfoDetail(orderinfoService,userService,goodsService);
+        Orderinfo orderinfo = new Orderinfo();
+        orderinfo.setSeller("root");
+        System.out.println(showOrderinfoDetail.getOrderinfoDetail(orderinfo).size());
+
     }
 }
 

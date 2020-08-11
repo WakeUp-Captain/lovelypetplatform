@@ -10,4 +10,25 @@
     <update id="updateOrderinfo" parameterType="Orderinfo">
         update orderinfo set state = #{state}
     </update>
+
+    <select id="selectOrderinfo" parameterType="Orderinfo" resultType="Orderinfo">
+        select *
+        from orderinfo
+        where orderid is not null
+        <if test="buyer!=null">
+            and buyer = #{buyer}
+        </if>
+        <if test="date!=null">
+            and date = #{date}
+        </if>
+        <if test="goodNum!=null">
+            and good_num = #{goodNum}
+        </if>
+        <if test="seller!=null">
+            and seller = #{seller}
+        </if>
+        <if test="state!=null">
+            and state = #{state}
+        </if>
+    </select>
 </mapper>
