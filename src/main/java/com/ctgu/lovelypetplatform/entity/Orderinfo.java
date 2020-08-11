@@ -11,7 +11,7 @@ public class Orderinfo {
     private Integer orderid;
     private String buyer;
     private String date;
-    private Integer goodnum;
+    private Integer goodNum;
     private String seller;
     private Integer state;
 }

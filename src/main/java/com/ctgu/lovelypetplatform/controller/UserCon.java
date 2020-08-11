@@ -20,13 +20,16 @@ public class UserCon {
     private UserService userService;
 
     @RequestMapping("/list")
-    public List<User> listAllUser(){
+    public List<User> listAllUser() {
         List<User> users = userService.selectAllUser();
         return users;
     }
 
-    @PostMapping("/register")
-    public String userRegister(@RequestParam Map<String,Object> reqMap){
+    @PostMapping("/login")
+    public String userLogin(@RequestParam Map<String, Object> reqMap) {
+        User user = new User();
+        user.setTelenum(reqMap.get("telenum").toString());
+        user.setPassword(reqMap.get("password").toString());
         return "注册成功";
     }
 }

@@ -9,4 +9,6 @@ import java.util.List;
 public interface GoodsMapepr {
     List<Goods> selectAllGoods();
     List<Goods> selectGoodsByMultipleParameter(Goods goods);
+    void insertGoods(Goods goods);
+    void updateGoods(Goods goods);
 }

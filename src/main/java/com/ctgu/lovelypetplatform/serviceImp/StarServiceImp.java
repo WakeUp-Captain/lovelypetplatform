@@ -1,6 +1,7 @@
 package com.ctgu.lovelypetplatform.serviceImp;
 
 
+import com.ctgu.lovelypetplatform.entity.Goods;
 import com.ctgu.lovelypetplatform.entity.Star;
 import com.ctgu.lovelypetplatform.mapper.StarMapper;
 import com.ctgu.lovelypetplatform.service.StarService;
@@ -24,5 +25,10 @@ public class StarServiceImp implements StarService {
     public Star insertStar(Star star) {
         starMapper.insertStar(star);
         return star;
+    }
+
+    @Override
+    public List<Goods> selectGoodsFromStarByTelenumAndGoodsNum(String telenum) {
+        return starMapper.selectGoodsFromStarByTelenumAndGoodsNum(telenum);
     }
 }

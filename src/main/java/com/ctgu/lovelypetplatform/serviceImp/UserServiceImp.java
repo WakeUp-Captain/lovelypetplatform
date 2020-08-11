@@ -26,7 +26,13 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public List<User> selectUserByTelenum(User user) {
-        return userMapper.selectUserByTelenum(user);
+    public List<User> selectUserByMultipleParameter(User user) {
+        return userMapper.selectUserByMultipleParameter(user);
+    }
+
+    @Override
+    public User updateUser(User user) {
+        userMapper.updateUser(user);
+        return user;
     }
 }
