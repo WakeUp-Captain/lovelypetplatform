@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ctgu.lovelypetplatform.mapper.PetsMapper">
+    <select id="getPetList" resultType="Pets" >
+        select
+        `good_num`,`description`,`price`,`summary_classifyname`,`detail_classifyname`,`pic1`,`pic2`,`pic3`,`state`,`owner`,`star_count`,`pur_comment`
+        from `goods`
+        where state = 1
+    </select>
+</mapper>
