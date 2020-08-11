@@ -22,4 +22,26 @@
             and description like CONCAT('%', #{description}, '%')
         </if>
     </select>
+
+    <insert id="insertGoods" keyProperty="id" useGeneratedKeys="true" parameterType="Goods">
+        insert into goods(description,price,summary_classifyname,detail_classifyname,pic1,pic2,pic3,state,owner,star_count,pur_comment)
+        values(#{description},#{price},#{summaryClassifyname},#{detailClassifyname},#{pic1},#{pic2},#{pic3},#{state},#{owner},#{starCount},#{purComment})
+    </insert>
+
+    <update id="updateGoods" parameterType="Goods">
+        update goods set
+        description=#{description},
+        price=#{price},
+        summary_classifyname=#{summaryClassifyname},
+        detail_classifyname=#{detailClassifyname},
+        pic1=#{pic1},
+        pic2=#{pic2},
+        pic3=#{pic3},
+        state=#{state},
+        owner=#{owner},
+        star_count=#{starCount},
+        pur_comment=#{purComment}
+        where good_num = #{goodNum}
+    </update>
+
 </mapper>

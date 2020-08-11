@@ -13,4 +13,10 @@
     <insert id="insertStar" keyProperty="id" useGeneratedKeys="true" parameterType="Star">
         insert  into star(good_num,telenum) values (#{goodNum},#{telenum})
     </insert>
+
+    <select id="selectGoodsFromStarByTelenumAndGoodsNum" parameterType="string" resultType="Goods">
+        select goods.*
+        from user,goods,star
+        where user.`telenum` = star.`telenum` and star.`good_num` = goods.`good_num`
+    </select>
 </mapper>

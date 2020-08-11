@@ -22,4 +22,16 @@ public class GoodsServiceImp implements GoodsService {
     public List<Goods> selectGoodsByMultipleParameter(Goods goods) {
         return goodsMapepr.selectGoodsByMultipleParameter(goods);
     }
+
+    @Override
+    public Goods insertGoods(Goods goods) {
+        goodsMapepr.insertGoods(goods);
+        return goods;
+    }
+
+    @Override
+    public Goods updateGoods(Goods goods) {
+        goodsMapepr.updateGoods(goods);
+        return goods;
+    }
 }

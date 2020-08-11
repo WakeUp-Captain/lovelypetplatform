@@ -9,5 +9,6 @@ import java.util.List;
 public interface UserMapper {
     List<User> selectAllUser();
     void insertUser(User user);
-    List<User> selectUserByTelenum(User user);
+    List<User> selectUserByMultipleParameter(User user);
+    void updateUser(User user);
 }

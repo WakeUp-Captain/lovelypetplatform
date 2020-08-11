@@ -9,4 +9,6 @@ import java.util.List;
 public interface GoodsService {
     List<Goods> selectAllGoods();
     List<Goods> selectGoodsByMultipleParameter(Goods goods);
+    Goods insertGoods(Goods goods);
+    Goods updateGoods(Goods goods);
 }

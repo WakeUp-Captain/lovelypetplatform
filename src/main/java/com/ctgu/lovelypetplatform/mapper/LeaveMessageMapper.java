@@ -9,4 +9,5 @@ import java.util.List;
 public interface LeaveMessageMapper {
     List<LeaveMessage> selectLeaveMessageByGoodsNum(int goodNum);
     void insertLeaveMessage(LeaveMessage leaveMessage);
+
 }
