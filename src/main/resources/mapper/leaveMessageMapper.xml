@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ctgu.lovelypetplatform.mapper.LeaveMessageMapper">
+    <select id="selectLeaveMessageByGoodsNum" parameterType="int" resultType="LeaveMessage">
+        select *
+        from `leave_message`
+        where good_num = #{goodNum}
+    </select>
+
+    <insert id="insertLeaveMessage" keyProperty="id" useGeneratedKeys="true" parameterType="LeaveMessage">
+        insert  into leave_message(good_num,telenum,date,message)
+        values(#{goodNum},#{telenum},#{date},#{message})
+    </insert>
+</mapper>

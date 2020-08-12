@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ctgu.lovelypetplatform.mapper.UserMapper">
+<!--    com/ctgu/lovelypetplatform/mapper/UserMapper.java-->
+    <select id="selectAllUser" resultType="User">
+--       select `telenum`,`password`,`nickname`,`headicon`,`sex`,`birthday`,`balance`,`address`
+        select *
+      from `user`
+    </select>
+
+    <insert id="insertUser" parameterType="User">
+        insert into user(telenum,password,nickname,headicon,sex,birthday,balance,address)
+        values (#{telenum},#{password},#{nickname},#{headicon},#{sex},#{birthday},#{balance},#{address})
+    </insert>
+
+    <select id="selectUserByMultipleParameter" resultType="User" parameterType="User">
+        select *
+        from `user` where telenum is not null
+        <if test="telenum!=null">
+             and telenum like #{telenum}
+        </if>
+        <if test="password!=null">
+            and password like #{password}
+        </if>
+        <if test="nickname!=null">
+            and nickname like #{nickname}
+        </if>
+        <if test="sex!=null">
+            and sex like #{sex}
+        </if>
+        <if test="address!=null">
+            and address like #{address}
+        </if>
+    </select>
+
+    <update id="updateUser" parameterType="User">
+        update user set
+        telenum=#{telenum},
+        password=#{password},
+        nickname=#{nickname},
+        headicon=#{headicon},
+        sex=#{sex},
+        birthday=#{birthday},
+        balance=#{balance},
+        address=#{address}
+        where telenum = #{telenum}
+    </update>
+</mapper>
