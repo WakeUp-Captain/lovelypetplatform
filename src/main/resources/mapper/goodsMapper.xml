@@ -37,10 +37,11 @@
         pic1=#{pic1},
         pic2=#{pic2},
         pic3=#{pic3},
-        state=#{state},
+ <!--       state=#{state},
         owner=#{owner},
         star_count=#{starCount},
         pur_comment=#{purComment}
+        -->
         where good_num = #{goodNum}
     </update>
 
