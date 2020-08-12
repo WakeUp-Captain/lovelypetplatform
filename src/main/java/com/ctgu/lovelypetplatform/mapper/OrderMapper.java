@@ -8,4 +8,5 @@ import java.util.List;
 public interface OrderMapper {
     List<Order> getBoughtOrder(@Param("buyername") String buyername);
     List<Order> getSoldOrder(@Param("sellername") String sellername);
+    int deleteByPrimaryKey(@Param("orderid") Integer orderid);
 }

@@ -32,4 +32,9 @@
         where orderinfo.seller =#{sellername}
         AND orderinfo.goodnum=goods.good_num
     </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from `orderinfo`
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </delete>
 </mapper>

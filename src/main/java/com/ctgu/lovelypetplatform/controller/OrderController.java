@@ -38,4 +38,14 @@ public class OrderController {
         ajaxResult.setData(soldOrder);
         return ajaxResult;
     }
+    @RequestMapping(value = "/deleteBought", method = RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult deleteBought(@RequestBody Order order){
+        System.out.println("success");
+        int result=orderService.deleteByPrimaryKey(order.getOrderid());
+//        System.out.println(user.getNickname());
+        AjaxResult ajaxResult = new AjaxResult();
+        ajaxResult.setSuccess(true);
+        return ajaxResult;
+    }
 }

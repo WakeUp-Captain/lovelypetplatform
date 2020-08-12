@@ -20,4 +20,9 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> getSoldOrder(String sellername) {
         return orderMapper.getSoldOrder(sellername);
     }
+
+    @Override
+    public int deleteByPrimaryKey(Integer orderid) {
+        return orderMapper.deleteByPrimaryKey(orderid);
+    }
 }
