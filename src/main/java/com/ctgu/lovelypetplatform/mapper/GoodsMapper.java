@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 @Mapper
-public interface GoodsMapepr {
+public interface GoodsMapper {
     List<Goods> selectAllGoods();
     List<Goods> selectGoodsByMultipleParameter(Goods goods);
     void insertGoods(Goods goods);

@@ -1,4 +1,4 @@
-package com.ctgu.lovelypetplatform.po;
+package com.ctgu.lovelypetplatform.entity;
 
 public class Pets {
     private Integer good_num;

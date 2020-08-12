@@ -1,4 +1,4 @@
-package com.ctgu.lovelypetplatform.po;
+package com.ctgu.lovelypetplatform.entity;
 
 import java.sql.Timestamp;
 

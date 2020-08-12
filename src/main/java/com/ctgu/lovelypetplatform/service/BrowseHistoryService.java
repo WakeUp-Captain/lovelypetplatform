@@ -1,6 +1,6 @@
 package com.ctgu.lovelypetplatform.service;
 
-import com.ctgu.lovelypetplatform.po.BrowseHistory;
+import com.ctgu.lovelypetplatform.entity.BrowseHistory;
 
 import java.util.List;
 

@@ -1,5 +1,5 @@
 package com.ctgu.lovelypetplatform.mapper;
-import com.ctgu.lovelypetplatform.po.Order;
+import com.ctgu.lovelypetplatform.entity.Order;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

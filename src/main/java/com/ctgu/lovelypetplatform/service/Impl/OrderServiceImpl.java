@@ -1,7 +1,7 @@
 package com.ctgu.lovelypetplatform.service.Impl;
 
 import com.ctgu.lovelypetplatform.mapper.OrderMapper;
-import com.ctgu.lovelypetplatform.po.Order;
+import com.ctgu.lovelypetplatform.entity.Order;
 import com.ctgu.lovelypetplatform.service.OrderService;
 import org.springframework.stereotype.Service;
 

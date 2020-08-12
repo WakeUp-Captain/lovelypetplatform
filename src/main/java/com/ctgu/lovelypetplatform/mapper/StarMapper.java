@@ -11,4 +11,6 @@ public interface StarMapper {
     List<Star> selectStarByMultipleParameter(Star star);
     void insertStar(Star star);
     List<Goods> selectGoodsFromStarByTelenumAndGoodsNum(String telenum);
+    List<Star> selectStarListByTelenum(String telenum);
+    int deleteByPrimaryKey(Integer starid);
 }

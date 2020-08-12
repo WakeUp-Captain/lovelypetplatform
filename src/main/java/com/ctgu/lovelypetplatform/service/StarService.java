@@ -9,4 +9,6 @@ public interface StarService {
     List<Star> selectStarByMultipleParameter(Star star);
     Star insertStar(Star star);
     List<Goods> selectGoodsFromStarByTelenumAndGoodsNum(String telenum);
+    List<Star> getStarsByTelenum(String telenum);
+    int deleteByPrimaryKey(int starid);
 }

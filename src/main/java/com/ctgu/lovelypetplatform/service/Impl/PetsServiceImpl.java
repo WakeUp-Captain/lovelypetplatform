@@ -1,7 +1,7 @@
 package com.ctgu.lovelypetplatform.service.Impl;
 
 import com.ctgu.lovelypetplatform.mapper.PetsMapper;
-import com.ctgu.lovelypetplatform.po.Pets;
+import com.ctgu.lovelypetplatform.entity.Pets;
 import com.ctgu.lovelypetplatform.service.PetsService;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package com.ctgu.lovelypetplatform.mapper;
 
-import com.ctgu.lovelypetplatform.po.BrowseHistory;
+import com.ctgu.lovelypetplatform.entity.BrowseHistory;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,7 +1,7 @@
 package com.ctgu.lovelypetplatform.service.Impl;
 
 import com.ctgu.lovelypetplatform.mapper.BrowseHistoryMapper;
-import com.ctgu.lovelypetplatform.po.BrowseHistory;
+import com.ctgu.lovelypetplatform.entity.BrowseHistory;
 import com.ctgu.lovelypetplatform.service.BrowseHistoryService;
 import org.springframework.stereotype.Service;
 

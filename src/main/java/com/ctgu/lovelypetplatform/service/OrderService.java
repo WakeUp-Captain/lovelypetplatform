@@ -1,6 +1,6 @@
 package com.ctgu.lovelypetplatform.service;
 
-import com.ctgu.lovelypetplatform.po.Order;
+import com.ctgu.lovelypetplatform.entity.Order;
 
 import java.util.List;
 

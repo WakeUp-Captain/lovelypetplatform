@@ -1,15 +1,12 @@
 package com.ctgu.lovelypetplatform.controller;
 
 import com.ctgu.lovelypetplatform.config.AjaxResult;
-import com.ctgu.lovelypetplatform.config.RetResult;
-import com.ctgu.lovelypetplatform.po.Order;
+import com.ctgu.lovelypetplatform.entity.Order;
 import com.ctgu.lovelypetplatform.po.User;
 import com.ctgu.lovelypetplatform.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.security.auth.Subject;
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -21,6 +18,16 @@ public class OrderController {
     @RequestMapping(value = "/bought", method = RequestMethod.POST)
     @ResponseBody
     public AjaxResult getBoughtList(@RequestBody User user){
+        System.out.println("success");
+        List<Order> boughtOrder=orderService.getBoughtOrder(user.getNickname());
+        System.out.println(user.getNickname());
+        AjaxResult ajaxResult = new AjaxResult();
+        ajaxResult.setData(boughtOrder);
+        return ajaxResult;
+    }
+    @RequestMapping(value = "/test", method = RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult test(@RequestBody User user){
         System.out.println("success");
         List<Order> boughtOrder=orderService.getBoughtOrder(user.getNickname());
         System.out.println(user.getNickname());
