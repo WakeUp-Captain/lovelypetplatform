@@ -37,8 +37,8 @@ public class GoodsCon {
                 reqMap.get("summaryClassifyname").toString(),
                 reqMap.get("detailClassifyname").toString(),
                 reqMap.get("pic1").toString(),
-                reqMap.get("pic2").toString(),
-                reqMap.get("pic3").toString(),
+                reqMap.get("pic1").toString(),
+                reqMap.get("pic1").toString(),
                 1,
                 reqMap.get("owner").toString(),
                 0,
@@ -58,8 +58,8 @@ public class GoodsCon {
                 reqMap.get("summaryClassifyname").toString(),
                 reqMap.get("detailClassifyname").toString(),
                 reqMap.get("pic1").toString(),
-                reqMap.get("pic2").toString(),
-                reqMap.get("pic3").toString(),
+                reqMap.get("pic1").toString(),
+                reqMap.get("pic1").toString(),
                 1,//不修改
                 null,//不修改
                 0,//不修改
