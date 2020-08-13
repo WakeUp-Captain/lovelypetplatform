@@ -12,4 +12,5 @@ public class Star {
     private Integer starid;
     private Integer goodNum;
     private String telenum;
+    private Pets pet;
 }

@@ -29,7 +29,6 @@ public class UserCon {
         List<User> users = userService.selectAllUser();
         return users;
     }
-
 //    用户登录控制
     @PostMapping("/login")
     public RetResult userLogin(@RequestParam Map<String, Object> reqMap) {
@@ -58,10 +57,10 @@ public class UserCon {
         user.setPassword(reqMap.get("password").toString());
         user.setBirthday(reqMap.get("birthday").toString());
         user.setHeadicon(reqMap.get("headicon").toString());
-        user.setAddress(reqMap.get("address").toString());
-        user.setBalance(null);
+        user.setAddress(reqMap.get("province").toString() +reqMap.get("city").toString());
+        user.setBalance("0");
         user.setSex(reqMap.get("sex").toString());
-        if (users.size() == 0) {
+        if (users.size() != 0) {
             return new RetResult(400,"用户名已被使用",user);
         }else {
             userService.insertUser(user);
@@ -92,7 +91,7 @@ public class UserCon {
         user.setTelenum(reqMap.get("telenum").toString());
         user = userService.selectUserByMultipleParameter(user).get(0);
 //        （原来的余额转double+重置的余额转double）最后转字符串
-        user.setBalance((String.valueOf(Double.parseDouble(reqMap.get("balance").toString()) +Double.parseDouble(user.getBalance()))));
+        user.setBalance((String.valueOf(Double.parseDouble(reqMap.get("recharge").toString()) +Double.parseDouble(user.getBalance()))));
         userService.updateUser(user);
         return new RetResult(200,"重置后的余额为:"+user.getBalance(),user);
     }
