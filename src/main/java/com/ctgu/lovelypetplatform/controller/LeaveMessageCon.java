@@ -27,7 +27,7 @@ public class LeaveMessageCon {
 //    在商品详情页根据商品的id查看所有用户的留言
     @PostMapping("/getMassage")
     public RetResult selectAllLeaveMessage(@RequestParam Map<String, Object> reqMap){
-        List<LeaveMessage> leaveMessages = leaveMessageService.selectLeaveMessageByGoodsNum(Integer.parseInt(reqMap.get("good_num").toString()));
+        List<LeaveMessage> leaveMessages = leaveMessageService.selectLeaveMessageByGoodsNum(Integer.parseInt(reqMap.get("goodnum").toString()));
         return new RetResult(200,"查询留言成功",leaveMessages);
     }
 
@@ -35,11 +35,12 @@ public class LeaveMessageCon {
     @PostMapping("/insertMassage")
     public RetResult insertMassage(@RequestParam Map<String, Object> reqMap){
         LeaveMessage leaveMessage = new LeaveMessage();
-        leaveMessage.setGoodNum(Integer.parseInt(reqMap.get("good_num").toString()));
-        leaveMessage.setMessage(reqMap.get("leaveMassage").toString());
+
+        leaveMessage.setMessage(reqMap.get("message").toString());
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         leaveMessage.setDate(df.format(new Date()).toString());
         leaveMessage.setTelenum(reqMap.get("telenum").toString());
+        leaveMessage.setGoodNum(Integer.parseInt(reqMap.get("goodnum").toString()));
         leaveMessageService.insertLeaveMessage(leaveMessage);
         return new RetResult(200,"",leaveMessage);
     }

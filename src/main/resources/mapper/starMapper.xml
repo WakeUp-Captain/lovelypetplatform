@@ -46,6 +46,7 @@
         where star.telenum=#{telenum}
         AND star.good_num=goods.good_num
     </select>
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from `star`
     where starid = #{starid,jdbcType=INTEGER}
