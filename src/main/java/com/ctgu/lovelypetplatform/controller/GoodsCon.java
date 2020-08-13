@@ -85,7 +85,9 @@ public class GoodsCon {
     public RetResult detailGoods(@RequestParam Map<String, Object> reqMap)
     {
         Goods goods = new Goods();
-        goods.setGoodNum(Integer.parseInt(reqMap.get("good_num").toString()));
+        System.out.println(Integer.parseInt(reqMap.get("goodnum").toString()));
+        goods.setGoodNum(Integer.parseInt(reqMap.get("goodnum").toString()));
+
         return new RetResult(200,"进入详情页",goodsService.selectGoodsByMultipleParameter(goods));
     }
 }

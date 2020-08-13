@@ -31,4 +31,14 @@ public class StarServiceImp implements StarService {
     public List<Goods> selectGoodsFromStarByTelenumAndGoodsNum(String telenum) {
         return starMapper.selectGoodsFromStarByTelenumAndGoodsNum(telenum);
     }
+
+    @Override
+    public List<Star> getStarsByTelenum(String telenum) {
+        return starMapper.selectStarListByTelenum(telenum);
+    }
+
+    @Override
+    public int deleteByPrimaryKey(int starid) {
+        return starMapper.deleteByPrimaryKey(starid);
+    }
 }

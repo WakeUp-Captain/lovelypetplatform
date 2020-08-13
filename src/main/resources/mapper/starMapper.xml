@@ -4,6 +4,21 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.ctgu.lovelypetplatform.mapper.StarMapper">
+
+    <resultMap id="starMap" type="Star">
+        <id column="starid" property="starid" jdbcType="INTEGER" />
+        <result column="telenum" property="telenum" jdbcType="VARCHAR" />
+        <result column="good_num" property="goodNum" jdbcType="INTEGER" />
+        <association property="pet" javaType="Pets" column="good_num">
+            <id property="good_num" column="good_num"></id>
+            <result column="price" property="price" jdbcType="DOUBLE" />
+            <result column="pic1" property="pic1" jdbcType="VARCHAR" />
+            <result column="summary_classifyname" property="summary_classifyname" jdbcType="VARCHAR" />
+            <result column="detail_classifyname" property="detail_classifyname" jdbcType="VARCHAR" />
+            <result column="description" property="description" jdbcType="VARCHAR" />
+        </association>
+    </resultMap>
+
     <select id="selectStarByMultipleParameter" parameterType="Star" resultType="Star">
         select *
         from `star` where starid is not null
@@ -24,4 +39,15 @@
         from user,goods,star
         where user.`telenum` = star.`telenum` and star.`good_num` = goods.`good_num`
     </select>
+    <select id="selectStarListByTelenum" parameterType="String" resultMap="starMap">
+        select
+        *
+        from `star`,`goods`
+        where star.telenum=#{telenum}
+        AND star.good_num=goods.good_num
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from `star`
+    where starid = #{starid,jdbcType=INTEGER}
+  </delete>
 </mapper>

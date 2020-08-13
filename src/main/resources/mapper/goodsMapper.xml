@@ -12,6 +12,9 @@
         select *
         from `goods`
         where good_num is not null
+        <if test="goodNum != null">
+            and good_num = #{goodNum}
+        </if>
         <if test="detailClassifyname != null">
             and detail_classifyname like CONCAT('%', #{detailClassifyname}, '%')
         </if>

@@ -57,7 +57,7 @@ public class JdbcTest {
     //    插入收藏记录
     @Test
     public void insertStar() {
-        Star star = new Star(null, 1, "admin");
+        Star star = new Star(null, 1, "admin",null);
         System.out.println(starService.insertStar(star));
     }
 
@@ -172,7 +172,7 @@ public class JdbcTest {
     @Test
 //    多条件的查询收藏
     public void selectStarByMultipleParameter(){
-        for (Star star:starService.selectStarByMultipleParameter(new Star(null,1,"admin")))
+        for (Star star:starService.selectStarByMultipleParameter(new Star(null,1,"admin",null)))
         {
             System.out.println(star);
         }
